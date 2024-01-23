@@ -1,0 +1,67 @@
+/* ----- top images ----- */
+.top-image-container {
+  outline: 3px solid rgb(175, 175, 175);
+  display: flex;
+  height: 350px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 47px;
+}
+.top-image {
+  flex: 1;
+  overflow: hidden;
+  transition: flex 0.5s;
+}
+.top-image:hover {
+  flex: 2;
+}
+.top-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.top-image-one {
+  overflow: hidden;
+}
+.top-image-text {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding-top: 10px;
+  opacity: 0.5;
+  transition: opacity 0.5s;
+  z-index: 1;
+}
+.top-image:hover .top-image-text {
+  opacity: 1;
+}
+
+/* --------------- media queries --------------- */
+
+@media only screen and (max-width: 700px) {
+  .top-image-container {
+    height: 300px !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .top-image-container {
+    height: 250px !important;
+  }
+  .top-image:hover {
+    flex: 3.5;
+  }
+  .prep-span {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .top-image-container {
+    height: 200px !important;
+  }
+  .top-image:hover {
+    flex: 4;
+  }
+}

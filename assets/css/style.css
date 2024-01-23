@@ -9,8 +9,15 @@
 body {
   font-family: "Metrophobic", sans-serif;
 }
+a {
+  color: black;
+  text-decoration: none; /* no underline */
+}
 .content {
   min-height: 100vh;
+}
+#this-page {
+  font-weight: 700;
 }
 
 /* ----- navbar ----- */
@@ -22,6 +29,7 @@ header {
   width: 100%;
   background-color: white;
   box-shadow: 0 4px 2px -2px rgb(175, 175, 175);
+  z-index: 2;
 }
 nav {
   display: flex;
@@ -30,52 +38,33 @@ nav {
   margin: 0 auto;
   max-width: 1200px;
 }
-nav h1 {
+.nav-title {
   margin-right: auto;
+  font-size: 28px !important;
 }
-nav p {
+.nav-links {
   margin: 0px 15px;
+  position: relative;
+}
+.nav-links:hover {
+  cursor: pointer;
+}
+.nav-links::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #000000; /* Set your desired underline color */
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease-out;
+}
+
+.nav-links:hover::after {
+  width: 100%;
 }
 .price-s-span {
   display: none;
-}
-
-/* ----- top images ----- */
-.top-image-container {
-  outline: 3px solid rgb(175, 175, 175);
-  display: flex;
-  height: 400px;
-  width: 100%;
-  overflow: hidden;
-  margin-top: 47px;
-}
-.top-image {
-  flex: 1;
-  overflow: hidden;
-  transition: flex 0.5s;
-}
-.top-image:hover {
-  flex: 2;
-}
-.top-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.top-image-one {
-  overflow: hidden;
-}
-.top-image-text {
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding-top: 10px;
-  opacity: 0.5;
-  transition: opacity 0.5s;
-}
-.top-image:hover .top-image-text {
-  opacity: 1;
 }
 
 /* ----- footer ----- */
@@ -89,12 +78,21 @@ footer p {
 }
 
 /* --------------- media queries --------------- */
-@media only screen and (max-width: 700px) {
-  nav p {
-    margin: 0px 7px;
+@media only screen and (max-width: 1200px) {
+  .nav-title {
+    font-size: 24px !important;
   }
+}
+
+@media only screen and (max-width: 700px) {
   nav {
-    padding: 15px;
+    padding: 10px 15px 10px 15px;
+  }
+  .nav-title {
+    font-size: 22px !important;
+  }
+  .nav-links {
+    margin: 0px 10px;
   }
   .price-s-span {
     display: inline;
@@ -106,34 +104,34 @@ footer p {
 }
 
 @media only screen and (max-width: 500px) {
-  .top-image:hover {
-    flex: 3;
-  }
   .prep-span {
     display: none;
   }
   nav {
     padding: 10px;
   }
-  nav h1 {
-    font-size: 20px;
+  .nav-title {
+    font-size: 20px !important;
   }
-  nav p {
+  .nav-links {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .nav-title {
+    font-size: 17px !important;
+  }
+  .nav-links {
     font-size: 12px;
   }
 }
 
 @media only screen and (max-width: 375px) {
-  .top-image-container {
-    height: 300px;
+  .nav-title {
+    font-size: 15px !important;
   }
-  .top-image:hover {
-    flex: 3.5;
-  }
-  nav h1 {
-    font-size: 16px;
-  }
-  nav p {
+  .nav-links {
     font-size: 10px;
   }
 }
