@@ -1,0 +1,139 @@
+/* css reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ----- body ----- */
+body {
+  font-family: "Metrophobic", sans-serif;
+}
+.content {
+  min-height: 100vh;
+}
+
+/* ----- navbar ----- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 4px 2px -2px rgb(175, 175, 175);
+}
+nav {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px 10px 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+nav h1 {
+  margin-right: auto;
+}
+nav p {
+  margin: 0px 15px;
+}
+.price-s-span {
+  display: none;
+}
+
+/* ----- top images ----- */
+.top-image-container {
+  outline: 3px solid rgb(175, 175, 175);
+  display: flex;
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 47px;
+}
+.top-image {
+  flex: 1;
+  overflow: hidden;
+  transition: flex 0.5s;
+}
+.top-image:hover {
+  flex: 2;
+}
+.top-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.top-image-one {
+  overflow: hidden;
+}
+.top-image-text {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding-top: 10px;
+  opacity: 0.5;
+  transition: opacity 0.5s;
+}
+.top-image:hover .top-image-text {
+  opacity: 1;
+}
+
+/* ----- footer ----- */
+footer {
+  padding: 10px;
+  text-align: center;
+  border-top: 3px solid rgb(175, 175, 175);
+}
+footer p {
+  margin: 0 auto;
+}
+
+/* --------------- media queries --------------- */
+@media only screen and (max-width: 700px) {
+  nav p {
+    margin: 0px 7px;
+  }
+  nav {
+    padding: 15px;
+  }
+  .price-s-span {
+    display: inline;
+  }
+  .estimator-span,
+  .contact-us-span {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .top-image:hover {
+    flex: 3;
+  }
+  .prep-span {
+    display: none;
+  }
+  nav {
+    padding: 10px;
+  }
+  nav h1 {
+    font-size: 20px;
+  }
+  nav p {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .top-image-container {
+    height: 300px;
+  }
+  .top-image:hover {
+    flex: 3.5;
+  }
+  nav h1 {
+    font-size: 16px;
+  }
+  nav p {
+    font-size: 10px;
+  }
+}
