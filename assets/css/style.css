@@ -6,18 +6,20 @@
 }
 
 /* ----- body ----- */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 body {
   font-family: "Metrophobic", sans-serif;
+}
+h1 {
+  font-family: "DM Serif Display", serif;
 }
 a {
   color: black;
   text-decoration: none; /* no underline */
-}
-.content {
-  min-height: 100vh;
-}
-#this-page {
-  font-weight: 700;
 }
 
 /* ----- navbar ----- */
@@ -27,51 +29,132 @@ header {
   left: 0;
   right: 0;
   width: 100%;
-  background-color: white;
-  box-shadow: 0 4px 2px -2px rgb(175, 175, 175);
   z-index: 2;
+  transition: background-color 0.3s ease-in-out;
 }
 nav {
   display: flex;
+  position: relative;
   align-items: center;
-  padding: 10px 20px 10px 20px;
+  padding: 5px 15px 5px 20px;
   margin: 0 auto;
   max-width: 1200px;
+  transition: background-color 0.3s ease-in-out;
+}
+.nav-scrolled {
+  background-color: white;
+  box-shadow: 0 4px 2px -2px rgb(175, 175, 175, 0.5);
+  transition: background-color 0.3s ease-in-out;
+}
+.nav-links-container {
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  transition: background-color 0.3s ease-in-out;
 }
 .nav-title {
+  margin-left: 5px;
   margin-right: auto;
+  color: white;
+  width: 300px;
   font-size: 28px !important;
 }
 .nav-links {
+  color: white;
   margin: 0px 15px;
   position: relative;
+  transition: background-color 0.3s ease-in-out;
+}
+.nav-links-no-scroll {
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
+}
+/* .nav-links-scrolled {
+  background-color: white;
+  transition: background-color 0.3s ease-in-out;
+} */
+.nav-text-scrolled {
+  color: black;
 }
 .nav-links:hover {
   cursor: pointer;
 }
-.nav-links::after {
+.nav-links-no-scroll::after {
   content: "";
   position: absolute;
   width: 0;
   height: 2px;
-  background-color: #000000; /* Set your desired underline color */
+  background-color: white;
   bottom: 0;
   left: 0;
   transition: width 0.3s ease-out;
 }
-
-.nav-links:hover::after {
+.nav-links-no-scroll:hover::after {
   width: 100%;
+}
+.nav-links-scrolled::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease-out;
+}
+.nav-links-scrolled:hover::after {
+  width: 100%;
+}
+#this-page {
+  font-weight: 700;
+}
+#this-page::after {
+  cursor: text !important;
+  text-decoration: None !important;
+  background-color: rgb(0, 0, 0, 0);
 }
 .price-s-span {
   display: none;
+}
+.nav-bar-icon {
+  display: none;
+}
+.nav-bar-lines {
+  display: none;
+}
+.nav-bar-cross {
+  display: none;
+}
+
+/* ----- hero ----- */
+.hero-container {
+  /* outline: 3px solid black; */
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+.hero-img {
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  bottom: -30%;
+  /* transition: opacity 0.5s ease-in-out; */
+}
+
+/* test */
+.test-container {
+  height: 200vh;
+  /* background-color: aqua; */
+  display: block;
 }
 
 /* ----- footer ----- */
 footer {
   padding: 10px;
   text-align: center;
-  border-top: 3px solid rgb(175, 175, 175);
+  box-shadow: 0 -4px 2px -2px rgb(175, 175, 175, 0.5);
 }
 footer p {
   margin: 0 auto;
@@ -82,17 +165,80 @@ footer p {
   .nav-title {
     font-size: 24px !important;
   }
+  .hero-img {
+    bottom: 0;
+  }
 }
 
 @media only screen and (max-width: 700px) {
   nav {
-    padding: 10px 15px 10px 15px;
+    padding: 5px 15px;
+  }
+  .nav-links-container {
+    width: 30%;
+    padding: 45px 0px 5px 0px;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    right: 0;
+    top: 0;
+    /* transition: transform 1s ease; */
+    transition: transform 1s ease, background-color 0.3s ease-in-out;
+    transform: translateX(100%);
+  }
+  .nav-links-container.show {
+    transform: translateX(0%); /* Slide in from the right when shown */
+    transition: background-color 0.3s ease-in-out, transform 1s ease;
+    box-shadow: -4px 4px 2px -2px rgba(175, 175, 175, 0.5),
+      0px 4px 2px -2px rgba(175, 175, 175, 0.5);
+  }
+  .nav-links-scrolled {
+    background-color: white;
+    transition: background-color 0.3s ease-in-out, transform 1s ease;
+  }
+  .nav-bar-icon {
+    font-size: 25px;
+  }
+  .nav-bar-lines {
+    color: white;
+    display: inline;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 15px 20px;
+  }
+  .nav-bar-cross {
+    color: white;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 68.5%;
+    margin: 15px 20px;
+  }
+  .nav-bar-lines-black {
+    color: black;
+    display: inline;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 15px 20px;
+  }
+  .nav-bar-cross-black {
+    color: black;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 68.5%;
+    margin: 15px 20px;
   }
   .nav-title {
     font-size: 22px !important;
   }
   .nav-links {
     margin: 0px 10px;
+    padding: 10px 0px;
   }
   .price-s-span {
     display: inline;
@@ -103,35 +249,34 @@ footer p {
   }
 }
 
+@media only screen and (max-width: 550px) {
+  .hero-container {
+    display: flex;
+    justify-content: center;
+  }
+  .hero-img {
+    width: auto;
+    height: 100%;
+  }
+}
+
 @media only screen and (max-width: 500px) {
   .prep-span {
     display: none;
   }
   nav {
-    padding: 10px;
+    padding: 5px 10px;
   }
   .nav-title {
     font-size: 20px !important;
   }
-  .nav-links {
-    font-size: 13px;
-  }
 }
 
-@media only screen and (max-width: 440px) {
-  .nav-title {
-    font-size: 17px !important;
+@media only screen and (max-width: 400px) {
+  .nav-bar-cross {
+    left: 67%;
   }
-  .nav-links {
-    font-size: 12px;
-  }
-}
-
-@media only screen and (max-width: 375px) {
-  .nav-title {
-    font-size: 15px !important;
-  }
-  .nav-links {
-    font-size: 10px;
+  .nav-bar-cross-black {
+    left: 67%;
   }
 }
