@@ -38,6 +38,7 @@
 
 /* ----- content ----- */
 .content-container {
+  /* outline: 2px solid black; */
   position: relative;
   width: 80%;
   max-width: 900px;
@@ -142,7 +143,6 @@
 
 /* ----- content container two ----- */
 .content-container-two {
-  /* outline: 3px solid black; */
   height: 500px;
 }
 .content-text-two {
@@ -175,6 +175,9 @@
 
 /* --------------- media queries --------------- */
 @media only screen and (max-width: 750px) {
+  .hero-text-container {
+    margin: 60px auto;
+  }
   .content-container {
     width: 90%;
     height: 600px;
@@ -184,14 +187,29 @@
     height: 500px;
   }
   .content-img-one {
+    width: 100%;
+    /* height: 100%; */
+  }
+}
+
+@media only screen and (max-width: 656px) {
+  .content-img-one {
     width: auto;
     height: 100%;
   }
 }
 
 @media only screen and (max-width: 622px) {
+  .hero-text-container {
+    margin: 50px auto 60px auto;
+  }
+  .content-img-one {
+    width: auto;
+    height: 100%;
+  }
   .content-container-two {
-    height: 550px;
+    height: 450px;
+    margin-bottom: 30px;
   }
   #content-img-container-five {
     height: 32%;
@@ -220,12 +238,13 @@
     width: auto;
     height: 100%;
   }
+  .content-container-two {
+    height: 450px;
+    margin-bottom: 30px;
+  }
 }
 
 @media only screen and (max-width: 515px) {
-  .content-container-two {
-    height: 570px;
-  }
   #content-img-container-one {
     height: 30%;
   }
@@ -236,14 +255,22 @@
     left: 0%;
   }
   #content-img-container-six {
-    height: 50%;
+    height: 40%;
     width: 35%;
-    bottom: 2%;
+    bottom: 7%;
     right: 7%;
+    justify-content: center;
+  }
+  .content-img-six {
+    width: 100%;
+    height: auto;
   }
 }
 
 @media only screen and (max-width: 445px) {
+  .hero-text-container {
+    margin: 40px auto;
+  }
   #content-img-container-one {
     height: 30%;
     width: 30%;
@@ -257,6 +284,34 @@
   #content-img-container-four {
     height: 30%;
   }
+  #content-img-container-six {
+    bottom: 5%;
+  }
+  .content-container-two {
+    height: 550px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .content-img-six {
+    width: auto;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 339px) {
+  #content-img-container-five {
+    bottom: 10%;
+  }
+  #content-img-container-six {
+    bottom: 0%;
+    overflow: hidden;
+  }
+  .content-img-six {
+    width: auto;
+    height: 100% !important;
+    object-fit: fill !important;
+  }
 }
 
 @media only screen and (max-width: 300px) {
@@ -267,7 +322,7 @@
     left: 0%;
   }
   #content-img-container-six {
-    height: 50%;
+    height: 35%;
     width: 35%;
     bottom: -5%;
     right: 7%;

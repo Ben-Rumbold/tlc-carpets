@@ -1,1 +1,159 @@
+/* ----- portfolio header/ text ----- */
+.down-btn {
+  position: absolute;
+  font-size: 40px;
+  top: -102px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: 0.7;
+  transition: transform 0.3s ease-in-out, opacity 0.5s ease;
+}
+.down-btn.hide {
+  opacity: 0;
+  /* display: none; */
+}
+.down-btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.portfolio-text-container {
+  /* outline: 2px solid black; */
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  margin: 80px auto 60px auto;
+  text-align: center;
+}
+.portfolio-header {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+.portfolio-subheader {
+  margin-top: 30px;
+  /* font-size: 20px; */
+  line-height: 2;
+  font-size: 18px;
+}
+.portfolio-subheader-span {
+  display: none;
+}
 
+/* ----- portfolio/ work section ----- */
+.portfolio-outer-container {
+  /* outline: 2px solid red; */
+  position: relative;
+  width: 80%;
+  max-width: 1200px;
+  /* min-height: 600px; */
+  margin: 80px auto;
+  text-align: center;
+}
+.portfolio-work-header {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+.portfolio-inner-container {
+  /* outline: 2px solid green; */
+  margin: 60px 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2em;
+  align-content: start;
+}
+.work-card {
+  position: relative;
+  display: flex;
+  /* overflow: hidden; */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  box-shadow: 0px 3px 2px rgba(175, 175, 175);
+}
+.work-card-img {
+  object-fit: cover;
+  width: 100%;
+}
+.job-info-container {
+  position: absolute;
+  display: none;
+  background-color: white;
+  box-shadow: 0 0 3px rgba(175, 175, 175);
+  padding: 10px;
+  width: 150px;
+  z-index: 99;
+}
+.work-card:hover .job-info-container {
+  display: block;
+}
+.job-info-cross {
+  display: none;
+}
+
+/* --------------- media query --------------- */
+@media only screen and (max-width: 1030px) {
+  .portfolio-subheader-span {
+    display: inline;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .portfolio-inner-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .portfolio-text-container {
+    margin: 60px auto;
+  }
+  .portfolio-outer-container {
+    margin: 60px auto;
+  }
+  .portfolio-inner-container {
+    gap: 1.6em;
+    margin: 40px 0px;
+  }
+  .portfolio-text-container {
+    margin: 60px auto 40px auto;
+  }
+}
+
+@media only screen and (max-width: 622px) {
+  .portfolio-text-container {
+    margin: 50px auto 60px auto;
+  }
+  .portfolio-inner-container {
+    gap: 1.2em;
+  }
+}
+
+@media only screen and (max-width: 622px) {
+  .portfolio-inner-container {
+    gap: 0.9em;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .portfolio-inner-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2em;
+  }
+}
+
+@media only screen and (max-width: 445px) {
+  .portfolio-text-container {
+    margin: 40px auto;
+  }
+  .portfolio-inner-container {
+    gap: 1.2em;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .portfolio-inner-container {
+    gap: 1em;
+  }
+}

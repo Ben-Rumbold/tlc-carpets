@@ -163,6 +163,7 @@ const images = [
   "./assets/images/hero-7.jpg",
 ];
 const imgSlideEl = document.querySelector(".hero-img-slide");
+// do a ```Math.floor random number for start index
 let currentIndex = 1;
 
 function changeImage() {
@@ -173,5 +174,28 @@ function changeImage() {
   currentIndex = (currentIndex + 1) % images.length;
   setTimeout(changeImage, 10000); // Change image every 10 seconds
 }
-
 changeImage(); // Start the initial image change
+
+// ---------------------------------------------------------------------------------
+
+// portfolio test section
+const boxes = document.querySelectorAll(".box");
+const popUps = document.querySelectorAll(".pop-up");
+boxes.forEach((box, index) => {
+  box.addEventListener("mousemove", (e) => {
+    const popUp = popUps[index];
+    popUp.style.left = e.clientX - box.getBoundingClientRect().left + "px";
+    popUp.style.top = e.clientY - box.getBoundingClientRect().top + "px";
+  });
+});
+
+const workCardEls = document.querySelectorAll(".work-card");
+const workCardPopUpEls = document.querySelectorAll(".job-info-container");
+workCardEls.forEach((card, index) => {
+  card.addEventListener("mousemove", (e) => {
+    const targetPopUp = workCardPopUpEls[index];
+    targetPopUp.style.left =
+      e.clientX - card.getBoundingClientRect().left + "px";
+    targetPopUp.style.top = e.clientY - card.getBoundingClientRect().top + "px";
+  });
+});

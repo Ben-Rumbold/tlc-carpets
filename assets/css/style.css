@@ -14,7 +14,8 @@ body {
 body {
   font-family: "Metrophobic", sans-serif;
 }
-h1 {
+h1,
+h2 {
   font-family: "DM Serif Display", serif;
 }
 a {
