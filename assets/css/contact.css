@@ -151,6 +151,12 @@ button:hover {
   }
 }
 
+@media only screen and (max-width: 750px) {
+  .contact-outer-container {
+    margin: 50px auto;
+  }
+}
+
 @media only screen and (max-width: 500px) {
   .contact-text-container {
     margin: 40px auto;
@@ -172,5 +178,12 @@ button:hover {
   }
   .process-outer-container {
     padding-bottom: 10px;
+  }
+  form {
+    margin: 50px 0px 40px 0px;
+  }
+  input,
+  textarea {
+    width: 90%;
   }
 }
