@@ -30,48 +30,94 @@
     <!-- portfolio css -->
     <link rel="stylesheet" href="./assets/css/contact.css" />
   </head>
-  <body class="overlay">
-    <header>
-      <nav>
-        <a href="./index.html" class="nav-title"><h1>TLC Carpets</h1></a>
-        <div class="nav-links-container">
-          <a href="./index.html"
-            ><p class="nav-links nav-links-no-scroll">Home</p></a
-          >
-          <a href="./portfolio.html"
-            ><p class="nav-links nav-links-no-scroll">Portfolio</p></a
-          >
-          <p class="nav-links nav-links-no-scroll" id="this-page">
-            Contact <span class="contact-us-span">Us</span>
-          </p>
-          <a href="./prices.html"
-            ><p class="nav-links nav-links-no-scroll">
-              Price<span class="price-s-span">s</span>
-              <span class="estimator-span">Estimator</span>
-            </p></a
-          >
-        </div>
-        <i class="fa-solid fa-bars nav-bar-icon nav-bar-lines"></i>
-        <i class="fa-solid fa-x nav-bar-icon nav-bar-cross"></i>
-      </nav>
+  <body>
+    <header class="header-wide header-wide-no-scroll">
+      <h1 class="header-wide-title">TLC Carpets</h1>
+      <div class="header-wide-nav-container">
+        <a href="./index.html" class="header-wide-nav-link">Home</a>
+        <a href="./portfolio.html" class="header-wide-nav-link">Portfolio</a>
+        <a class="header-wide-nav-link" id="this-page">Contact</a>
+        <a href="./prices.html" class="header-wide-nav-link">Prices</a>
+      </div>
+    </header>
+    <header class="header-narrow">
+      <h1 class="header-narrow-title">TLC Carpets</h1>
+      <div class="header-narrow-nav-link-background"></div>
+      <div class="header-narrow-nav-container">
+        <a
+          href="./index.html"
+          class="header-narrow-nav-link header-narrow-nav-link-one"
+          >Home</a
+        >
+        <a
+          href="./portfolio.html"
+          class="header-narrow-nav-link header-narrow-nav-link-two"
+          >Portfolio</a
+        >
+        <a
+          class="header-narrow-nav-link header-narrow-nav-link-three"
+          id="this-page"
+          >Contact</a
+        >
+        <a
+          href="./prices.html"
+          class="header-narrow-nav-link header-narrow-nav-link-four"
+          >Prices</a
+        >
+      </div>
+      <i class="fa-solid fa-x header-narrow-icon header-narrow-cross"></i>
+      <i class="fa-solid fa-bars header-narrow-icon header-narrow-lines"></i>
     </header>
     <!-- hero -->
     <div class="hero-container">
       <img
-        src="./assets/images/hero-1.jpg"
-        alt="carpetted room (hero image)"
+        src="./assets/images/hero-3.jpg"
+        alt="Terry Lynch Carpet Fitter Upminster TLC Carpets"
         class="hero-img hero-img-slide"
       />
+    </div>
+    <div class="down-btn-container">
+      <i class="fa-solid fa-circle-chevron-down down-btn"></i>
     </div>
     <div class="contact-text-container">
       <h1 class="contact-heading">Contact Us</h1>
       <hr />
       <p class="contact-subheader">
         Whether you have a specific quetsion, a general enquiry, or would like
-        to book a measure, we look forward to you filling out the form below.
+        to book a measure, we look forward to hearing from you. Please consider
+        filling out the form below.
       </p>
     </div>
+    <!-- mtt = meet the team -->
     <div class="contact-outer-container">
+      <div class="mtt-container">
+        <h3 class="mtt-header">Terry Lynch</h3>
+        <div class="mtt-img-container">
+          <img
+            class="mtt-img"
+            src="./assets/images/meet-the-team-1.png"
+            alt="Terry Lynch Carpet Fitter Upminster TLC Carpets"
+          />
+        </div>
+        <p class="mtt-text hidden">
+          Terry Lynch, a seasoned flooring specialist based in Upminster, brings
+          over a decade of expertise in fitting high-quality carpets, with a
+          specialization in sisal and flatweave. His meticulous craftsmanship
+          ensures a touch of luxury in every home.
+        </p>
+        <div class="mtt-contact-container">
+          <div class="mtt-phone-container">
+            <i class="fa-solid fa-phone mtt-icon"></i>
+            <a href="tel: 07766116573" class="mtt-contact-text">07766116573</a>
+          </div>
+          <div class="mtt-email-container">
+            <i class="fa-solid fa-inbox mtt-icon"></i>
+            <a href="mailto: contact@tlccarpets.co.uk" class="mtt-contact-text"
+              >contact@tlccarpets.co.uk</a
+            >
+          </div>
+        </div>
+      </div>
       <div class="process-outer-container">
         <h2 class="process-heading">
           The simple 4 step process for your dream flooring
@@ -117,7 +163,7 @@
         class="form-outer-container"
         onsubmit="sendEmail(); reset(); return false;"
       >
-        <h2 class="form-heading">Get in Touch</h2>
+        <h2 class="form-heading">Get in touch</h2>
         <hr />
         <input
           type="text"
@@ -128,16 +174,32 @@
         />
         <input type="email" id="email" placeholder="Email Address" required />
         <input type="text" id="phone" placeholder="Phone Number" required />
+        <input
+          type="text"
+          id="street-address"
+          placeholder="Street Address"
+          required
+        />
+        <div class="town-postcode-wrapper">
+          <input type="text" id="town-city" placeholder="Town/ City" required />
+          <input type="text" id="postcode" placeholder="Postcode" required />
+        </div>
+
         <textarea
           id="message"
-          rows="4"
+          rows="5"
           placeholder="How can we help you?"
         ></textarea>
         <button type="submit">Send</button>
       </form>
     </div>
     <footer>
-      <p>©Ben Rumbold Studios 2024</p>
+      <a href="https://github.com/Ben-Rumbold" target="_blank"
+        ><img
+          src="./assets/images/BoldCodeStudios.png"
+          alt="BoldCode Studios Logo"
+          class="boldCodeStudios-logo"
+      /></a>
     </footer>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="./assets/js/script.js"></script>

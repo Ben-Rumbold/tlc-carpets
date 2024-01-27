@@ -31,58 +31,77 @@
     <link rel="stylesheet" href="./assets/css/prices.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="./index.html" class="nav-title"><h1>TLC Carpets</h1></a>
-        <div class="nav-links-container">
-          <a href="./index.html"
-            ><p class="nav-links nav-links-no-scroll">Home</p></a
-          >
-          <a href="./portfolio.html"
-            ><p class="nav-links nav-links-no-scroll">Portfolio</p></a
-          >
-          <a href="./contact.html"
-            ><p class="nav-links nav-links-no-scroll">
-              Contact <span class="contact-us-span">Us</span>
-            </p></a
-          >
-          <p class="nav-links nav-links-no-scroll" id="this-page">
-            Price<span class="price-s-span">s</span>
-            <span class="estimator-span">Estimator</span>
-          </p>
-        </div>
-        <i class="fa-solid fa-bars nav-bar-icon nav-bar-lines"></i>
-        <i class="fa-solid fa-x nav-bar-icon nav-bar-cross"></i>
-      </nav>
+    <header class="header-wide header-wide-no-scroll">
+      <h1 class="header-wide-title">TLC Carpets</h1>
+      <div class="header-wide-nav-container">
+        <a href="./index.html" class="header-wide-nav-link">Home</a>
+        <a href="./portfolio.html" class="header-wide-nav-link">Portfolio</a>
+        <a href="./contact.html" class="header-wide-nav-link">Contact</a>
+        <a class="header-wide-nav-link" id="this-page">Prices</a>
+      </div>
+    </header>
+    <header class="header-narrow">
+      <h1 class="header-narrow-title">TLC Carpets</h1>
+      <div class="header-narrow-nav-link-background"></div>
+      <div class="header-narrow-nav-container">
+        <a
+          href="./index.html"
+          class="header-narrow-nav-link header-narrow-nav-link-one"
+          >Home</a
+        >
+        <a
+          href="./portfolio.html"
+          class="header-narrow-nav-link header-narrow-nav-link-two"
+          >Portfolio</a
+        >
+        <a
+          href="./contact.html"
+          class="header-narrow-nav-link header-narrow-nav-link-three"
+          >Contact</a
+        >
+        <a
+          class="header-narrow-nav-link header-narrow-nav-link-four"
+          id="this-page"
+          >Prices</a
+        >
+      </div>
+      <i class="fa-solid fa-x header-narrow-icon header-narrow-cross"></i>
+      <i class="fa-solid fa-bars header-narrow-icon header-narrow-lines"></i>
     </header>
     <!-- hero -->
     <div class="hero-container">
       <img
-        src="./assets/images/work-in-progress.jpg"
-        alt="carpetted room (hero image)"
+        src="./assets/images/hero-4.jpg"
+        alt="Terry Lynch Carpet Fitter Upminster TLC Carpets"
         class="hero-img"
       />
     </div>
+    <div class="down-btn-container">
+      <i class="fa-solid fa-circle-chevron-down down-btn"></i>
+    </div>
     <!-- hero text -->
     <div class="hero-text-container">
-      <i class="fa-solid fa-circle-chevron-down down-btn"></i>
       <h1 class="hero-heading" id="hero-text">Coming Soon</h1>
       <hr />
       <p class="hero-text">
-        Dedicated to enhancing your experience, the developer
         <a
           target="_blank"
           href="https://ben-rumbold.github.io/ben-rumbold-portfolio-bootstrap/"
-          ><b>Ben Rumbold</b></a
-        >, is working on a software solution to allow customers. Saving time,
-        money and effort for both the customer, contractor and buiness alike
-        tirelessly crafting a cutting-edge software solution designed to
-        revolutionize your ability to estimate and plan flooring projects for
-        your own property.
+          ><span><b>Bold</b>Code<i>Studios </i></span></a
+        >
+        are working on a software solution to make available to flooring
+        customers a quote witin seconds, based on the user entering only a few
+        details. Saving time, money and effort for customer, contractor and
+        buiness alike. Watch this space!
       </p>
     </div>
     <footer>
-      <p>©Ben Rumbold Studios 2024</p>
+      <a href="https://github.com/Ben-Rumbold" target="_blank"
+        ><img
+          src="./assets/images/BoldCodeStudios.png"
+          alt="BoldCode Studios Logo"
+          class="boldCodeStudios-logo"
+      /></a>
     </footer>
     <script src="./assets/js/script.js"></script>
   </body>
