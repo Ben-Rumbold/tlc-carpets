@@ -63,30 +63,83 @@
         class="hero-img hero-img-slide"
       />
     </div>
-    <div class="t-carousel">
-      <div class="t-carousel-img-container">
-        <img
-          class="t-carousel-img"
-          src="./assets/images/content-img-3.jpeg"
-          alt=""
-        />
-      </div>
-      <div class="t-carousel-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae debitis,
-        dolores non, et reiciendis itaque, odio provident temporibus laudantium
-        facere natus modi ipsum tempora magni?
-      </div>
-      <i
-        class="fa-solid fa-chevron-left t-carousel-btn t-carousel-left-btn"
-      ></i>
-      <i
-        class="fa-solid fa-chevron-right t-carousel-btn t-carousel-right-btn"
-      ></i>
+    <div class="contact-text-container">
+      <h1 class="contact-heading">Contact Us</h1>
+      <hr />
+      <p class="contact-subheader">
+        Whether you have a specific quetsion, a general enquiry, or would like
+        to book a measure, we look forward to you filling out the form below.
+      </p>
     </div>
-    <div class="test-container"></div>
+    <div class="contact-outer-container">
+      <div class="process-outer-container">
+        <h2 class="process-heading">
+          The simple 4 step process for your dream flooring
+        </h2>
+        <hr />
+        <div class="process process-one">
+          <i class="fa-solid fa-envelope process-icon process-icon-one"></i>
+          <p class="process-text process-one-text hidden">
+            Connect with us! Share your flooring dreams, and let's turn them
+            into reality. Your vision, our expertise.
+          </p>
+        </div>
+        <div class="process process-two">
+          <p class="process-text process-two-text hidden">
+            Transform your space with a personal touch. Schedule a visit for
+            detailed measurements and design consultations.
+          </p>
+          <i
+            class="fa-solid fa-ruler-combined process-icon process-icon-two"
+          ></i>
+        </div>
+        <div class="process process-three">
+          <i
+            class="fa-solid fa-file-invoice-dollar process-icon process-icon-three"
+          ></i>
+          <p class="process-text process-three-text hidden">
+            Expect excellence without breaking the bank. Anticipate a detailed
+            quote that reflects our commitment to exceptional service at a
+            competitive price.
+          </p>
+        </div>
+        <div class="process process-four">
+          <p class="process-text process-four-text hidden">
+            It's installation day! Watch as your space undergoes a stunning
+            transformation with our expert carpet installation team.
+          </p>
+          <i
+            class="fa-solid fa-screwdriver-wrench process-icon process-icon-four"
+          ></i>
+        </div>
+      </div>
+      <form
+        class="form-outer-container"
+        onsubmit="sendEmail(); reset(); return false;"
+      >
+        <h2 class="form-heading">Get in Touch</h2>
+        <hr />
+        <input
+          type="text"
+          id="name"
+          placeholder="Your Name"
+          class="input-one"
+          required
+        />
+        <input type="email" id="email" placeholder="Email Address" required />
+        <input type="text" id="phone" placeholder="Phone Number" required />
+        <textarea
+          id="message"
+          rows="4"
+          placeholder="How can we help you?"
+        ></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
     <footer>
       <p>©Ben Rumbold Studios 2024</p>
     </footer>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
